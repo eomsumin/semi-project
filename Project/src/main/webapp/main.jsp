@@ -12,5 +12,6 @@
 	<a href="${ contextPath }/premium.me">프리미엄결제</a>
 	<a href="${ contextPath }/personal.me">1:1 문의</a>
 	<a href="${ contextPath }/fna.me">자주하는 질문</a>
+	<a href="${ contextPath }/secession.me">탈퇴하기</a>
 </body>
 </html>
