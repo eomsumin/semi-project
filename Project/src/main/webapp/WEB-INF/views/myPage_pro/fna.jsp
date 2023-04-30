@@ -6,10 +6,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;&display=swap');
 
-	body {font-family: 'Noto Sans KR', sans-serif;}
+	* {font-family: 'Noto Sans KR', sans-serif;}
 	
 	#dog {display: block; margin: auto; border-radius: 20px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);}
 	
@@ -28,6 +28,7 @@
 	  padding: 10px 13px;
 	  font-size: 14px;
 	  outline: none;
+	  font-weight: 300;
 	}
 
 	
@@ -73,7 +74,7 @@
   	 margin-bottom: 10px; 
   	 transition: height 0.5s ease;
    } 
-
+	
 </style>
 <body>
 	<jsp:include page="../common/top.jsp"/>
@@ -110,6 +111,8 @@
 	</div>
 
 	<br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br>
+	
 	
 	<script>
 	
@@ -130,7 +133,7 @@
 			});
 		}
 	</script>
-
-
+	
+	<jsp:include page="../common/bottom.jsp"/>
 </body>
 </html>

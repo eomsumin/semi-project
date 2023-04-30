@@ -6,22 +6,37 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
 <style>
+
+	* {font-family: 'Noto Sans KR', sans-serif;}
+	
 	#logo {width:150px; height:150px; display: block; margin: auto;}
 	
-	h2 {text-align: center;}
+	h2 {text-align: center; font-weight: 700;}
 	
 	#area { width: 800px; height: 900px; display: block; margin: auto;
-			border: 1px solid lightgray; padding: 20px;
+			border: 1px solid #eee; padding: 50px;
 			border-radius: 20px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);  text-align: center;}
 			
 	#agree {margin-left: 1000px;}
 	
-	#btn {display: inline-block; margin-left: 700px; background-color: #1abc9c; color:white; border: none; width:120px; height: 40px;
-			border-radius: 50px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);}
+	#btn {display: inline-block; background-color: #1abc9c; color:white; border: none; width:120px; height: 40px;
+			border-radius: 50px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); margin-left: 880px;}
 			
-	#btn2 {display: inline-block; background-color: lightgray; color:white; border: none; width:120px; height: 40px;
-			border-radius: 50px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);}
+/* 	#btn2 {display: inline-block; background-color: lightgray; color:white; border: none; width:120px; height: 40px; */
+/* 			border-radius: 50px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);} */
+			
+	#modal { width: 320px; height: 180px; border: 1px solid #eee; padding: 50px; margin: auto; display: none;
+			border-radius: 20px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);  text-align: center; background-color: white;
+			 position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999;}
+	
+	#btn3 { background-color: #1abc9c; color:white; border: none; width: 100px; height: 35px;
+			border-radius: 20px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); }
+			
+	#btn4 { background-color: lightgray; color:white; border: none; width: 100px; height: 35px;
+			border-radius: 20px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);}}
+
 	
 </style>
 <body>
@@ -46,10 +61,29 @@
 	
 	<input type="checkbox" id="agree"> 개인정보 활용 동의하기 <br><br><br>
 	
-	<button type="submit" id="btn">탈퇴하기</button>&nbsp;
-	<button id="btn2">취소하기</button><br><br>
+	<button id="btn">탈퇴하기</button>&nbsp;
 	
-	<br><br><br>
+	<div id="modal">
+	<h5>정말로 탈퇴하시겠습니까?</h5><br>
+	<button type="submit" id="btn3">탈퇴하기</button>&nbsp;
+	<button id="btn4">취소하기</button>
+	</div>
 	
+	<br><br><br><br>
+	
+	<script>
+		
+		document.getElementById('btn').addEventListener('click', () => {
+			document.getElementById('modal').style.display = 'block';
+		});
+		
+		document.getElementById('btn4').addEventListener('click', () => {
+			document.getElementById('modal').style.display = 'none';
+		});
+		
+	</script>
+	
+	<jsp:include page="../common/bottom.jsp"/>
+
 </body>
 </html>

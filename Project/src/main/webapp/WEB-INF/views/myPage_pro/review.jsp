@@ -5,26 +5,40 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="https://fonts.googleapis.com/css?family=Nanum Gothic" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
 <style>
-	body {text-align: center; font-family: 'Nanum Gothic', sans-serif;
-		   margin-left: auto; margin-right: auto;}
+
+	* {font-family: 'Noto Sans KR', sans-serif;}
 	
-	.title {margin-left: 450px;}
+	body {text-align: center; margin-left: auto; margin-right: auto;}
+	
+	.title {margin-left: 450px; font-weight: 700;}
 	
 	.area {border: 1px solid lightgray; padding: 20px;
 			border-radius: 20px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);  text-align: center;}
+	.avg {font-weight: 700;}
 			
 	
-	.subtitle {font-size: 20px; text-align: left;}
+	.subtitle {font-size: 20px; text-align: left; font-weight: 500;}
+
+	#area1 {display: inline-block; width: 380px; height: 340px; margin-left: 450px; align-items: center; justify-content: center;
+			top: 100px;}
+	#area2 {display: inline-block; width: 380px; height: 340px; align-items: center; padding-top: 76px;}
+	#area3 {margin-left: 450px; width: 765px; height: 340px; margin-top: 20px;}
 	
-	#area1 {display: inline-block; margin-left: 450px; width: 380px; height: 340px;}
-	#area2 {display: inline-block; width: 380px; height: 340px; padding-top: 50px;}
-	#area3 {width: 760px; height: 340px;}
-	
-	.check {background-color: #439A97; color:white; border: none; width:80px; height: 30px;
+	.check {background-color: #1abc9c; color: white; border: none; width:85px; height: 33px;
 			border-radius: 20px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);}
+			
+ 	#reBtn {color: #1abc9c; border: 1px solid #1abc9c; background-color: white; width:60px; height: 30px; border-radius: 20px;}		
+		
+	#modal {width: 600px; height: 400px; border: 1px solid #eee; padding: 20px; margin: auto; display: none;
+			border-radius: 20px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);  text-align: center; background-color: white;
+			 position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999;}
+			 
+	#xBtn {border: none; background-color: transparent; float: right;}	
 	
+	#modal img, #modal h3, #modal h5 { display: inline-block; float: left; }
+ 	
 </style>
 </head>
 <body>
@@ -82,7 +96,6 @@
 			</select><br><br>
 			<button class="check">조회</button>
 		</div>
-		</form>
 		
 		<div class="area" id="area2">
 			<span class="subtitle">평점</span><br><br>
@@ -91,11 +104,12 @@
 			<img src="img/star1.png"/>
 			<img src="img/star1.png"/>
 			<img src="img/star1.png"/><br>
-			<span><h2>5.0</h2></span><br>
+			<span><h2 class="avg">5.0</h2></span><br>
 			
 			<span class="subtitle">후기건수</span><br>
-			<span>33건</span><br>		
+			<span>33건</span><br>	
 		</div>
+	</form>
 
 		<div class="area" id="area3">
 			<span class="subtitle">조회결과</span><br>
@@ -117,7 +131,7 @@
 			      <td>강건강</td>
 			      <td>2023 - 04 - 22</td>
 			      <td>강아지</td>
-			      <td>후기</td>
+			      <td><button id="reBtn">후기</button></td>
 			    </tr>
 			    <tr>
 			      <th scope="row">002</th>
@@ -143,5 +157,42 @@
 			  </tbody>
 			</table>		
 		</div>
+		
+		<div id="modal">
+		<button id="xBtn"><img src="img/x.png"/></button><br>
+		<img src="img/user.png" width="50px" height="50px"/>&nbsp;&nbsp;
+		<h3>강건강&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+		<h5>고양이&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+		<img src="img/star1.png" width="30px" height="30px"/>
+		<img src="img/star1.png" width="30px" height="30px"/>
+		<img src="img/star1.png" width="30px" height="30px"/>
+		<img src="img/star1.png" width="30px" height="30px"/>
+		<img src="img/star2.png" width="30px" height="30px"/><br><br><br><br>
+		집에가고싶다집에가고싶다집에가고싶다집에가고싶다집에가고싶다집에가고싶다집에가고싶다집에가고싶다
+		집에가고싶다집에가고싶다집에가고싶다집에가고싶다집에가고싶다집에가고싶다집에가고싶다집에가고싶다
+		집에가고싶다집에가고싶다집에가고싶다집에가고싶다집에가고싶다집에가고싶다집에가고싶다집에가고싶다
+		</div>
+		
+		<br><br><br><br>
+		<br><br><br><br>
+		<br><br><br><br>
+		<br><br><br><br>
+		<br><br><br><br>
+		<br><br><br><br>	
+		
+		<jsp:include page="../common/bottom.jsp"/>
+	
+	
+		<script>
+		
+		document.getElementById('reBtn').addEventListener('click', () => {
+			document.getElementById('modal').style.display = 'block';
+		});
+		
+		document.getElementById('xBtn').addEventListener('click', () => {
+			document.getElementById('modal').style.display = 'none';
+		});
+		
+	</script>
 </body>
 </html>
